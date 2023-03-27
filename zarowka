@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="zarowka.js" defer></script>
+    <style>
+        table{background-color: yellow;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #zarowka{
+            margin:0 auto;
+            display: block;
+        }
+        td{
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+<img src="zgaszona.png" alt="" id="zarowka">
+<table>
+    <tr>
+        <td>
+            <button id="wlacz">Włącz</button>
+        </td>
+
+        <td>
+            <button id="wylacz">Wyłącz</button>
+        </td>
+    </tr>
+    <tr style="background-color: white">
+        <td>
+            <input type="radio" id="radiowlacz" name="radioo" ><label id="wlacz1">Włączony</label>
+        </td>
+        <td>
+            <input type="radio" id="radiowylacz" name="radioo"><label id="wylacz1" >Wyłączony</label>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="checkbox" id="check" name="radioo" ><label for="check" id="labelcheck">Włączony</label>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
+
+
+
+document.querySelector("#wlacz").addEventListener("click", function () {
+    document.getElementById("zarowka").src="zapalona.png";
+    document.getElementById("radiowlacz").checked="true";
+    document.getElementById("check").checked="true";
+});
+document.querySelector("#wylacz").addEventListener("click", function () {
+    document.getElementById("zarowka").src="zgaszona.png";
+    document.getElementById("radiowylacz").checked="false";
+    document.getElementById("check").checked="false";
+});
+document.querySelector("#radiowlacz").addEventListener("click", function () {
+    document.getElementById("zarowka").src="zapalona.png";
+    document.getElementById("radiowlacz").checked="true";
+    document.getElementById("check").checked="true";
+});
+document.querySelector("#radiowylacz").addEventListener("click", function () {
+    document.getElementById("zarowka").src="zgaszona.png";
+    document.getElementById("radiowylacz").checked="false";
+    document.getElementById("check").checked="false";
+});
+document.querySelector("#wlacz1").addEventListener("click", function () {
+    document.getElementById("zarowka").src="zapalona.png";
+    document.getElementById("radiowlacz").checked="true";
+    document.getElementById("check").checked="true";
+});
+document.querySelector("#wylacz1").addEventListener("click", function () {
+    document.getElementById("zarowka").src="zgaszona.png";
+    document.getElementById("radiowylacz").checked="false";
+    document.getElementById("check").checked="false";
+});
+// checkbox
+document.getElementById('labelcheck').innerText = 'Wyłączona';
+document.getElementById('check').checked = false;
+
+document.getElementById('check').addEventListener('change',function () {
+    document.getElementById('check').toggleAttribute('checked');
+    if (document.getElementById('check').checked) {
+        document.getElementById('żarówka').src = 'Włączona';
+        document.getElementById('labelcheck').innerText=
+        document.getElementById('radio_on').checked = true;
+        } else {
+        document.getElementById('checkbox_switch_label').innerText = 'Wyłączona';
+        console.log('Żarówka została wyłączona checkboxem');
+        document.getElementById('radio_off').checked = true;
+    }
+});
